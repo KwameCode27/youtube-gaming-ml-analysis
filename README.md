@@ -1,87 +1,82 @@
-# 🎮 YouTube Gaming Channel Predictor
+# 🎮 YouTube Gaming Channel Analysis & Machine Learning  
 
-This project analyzes **Top YouTube Gaming Channels** and uses **Machine Learning** to:
-- Predict **Hours Watched** based on channel stats.
-- Cluster channels into groups (e.g., efficient, high-view, long-hour).
-- Provide an **interactive web app** (built with Streamlit) to make predictions.
+This project analyzes the performance of **top YouTube Gaming channels** using real-world streaming data. It combines **data analysis, machine learning, and interactive visualizations** to uncover insights about streaming efficiency and predict audience engagement.  
 
 ---
 
+## 📊 Features  
+
+- **Data Cleaning & Feature Engineering**  
+  - Added new metrics such as:  
+    - *Viewers per Hour* = Average Viewers × Airtime Hours  
+    - *Efficiency* = Hours Watched ÷ Airtime Hours  
+
+- **Machine Learning Models**  
+  - Built and compared **Linear Regression** and **Random Forest Regressor**  
+  - Predicts a channel’s **Hours Watched**  
+  - Model evaluation with **R², MAE, RMSE**  
+
+- **Clustering (Unsupervised Learning)**  
+  - Used **KMeans** to group channels into 3 performance clusters:  
+    - High-efficiency creators  
+    - Long-hour grinders  
+    - Balanced performers  
+
+- **Interactive Web App (Streamlit)**  
+  - Upload channel stats or use dataset  
+  - Predict expected **Hours Watched**  
+  - Visualize channel clusters and compare strategies  
 
 ---
 
-## ⚙️ Installation
+## 🛠️ Tech Stack  
 
-1. Clone this repo or download the files.  
-2. (Optional but recommended) Create a virtual environment:
+- **Python** (pandas, numpy, matplotlib, scikit-learn, joblib)  
+- **Machine Learning** (Regression + Clustering)  
+- **Streamlit** for interactive web app  
 
+---
+
+## 🚀 Setup & Installation  
+
+### 1️⃣ Clone the repo  
 ```bash
-python -m venv venv
-.\venv\Scripts\activate    # Windows
-source venv/bin/activate   # Linux/Mac
+git clone https://github.com/your-username/youtube-gaming-ml-analysis.git
+cd youtube-gaming-ml-analysis
+```
 
+2️⃣ Install dependencies
 
+Make sure you have Python 3.10+ installed. Then run:
+```bash
 pip install -r requirements.txt
+```
 
+3️⃣ Run the analysis script
+```bash
+python app.py
+```
 
-📊 Training the Model
-
-Run the ML script to:
-
-Load dataset
-
-Engineer features
-
-Train Linear Regression & Random Forest
-
-Save best models
-
-Perform clustering & visualization
-
-
-python train_model.py
-
-
-🌐 Running the Web App
-
-To launch the prediction app:
+4️⃣ Run the Streamlit app
+```bash
 streamlit run app.py
+```
 
-python -m streamlit run app.py
+📌 Example Use Cases
 
-🖼 Features
+Streamers → Benchmark performance against competitors
 
-ML Models: Linear Regression & Random Forest
+Brands/Advertisers → Identify efficient channels for sponsorships
 
-Predictions: Estimate Hours Watched from user input stats
+Researchers → Study gaming content engagement trends
 
-Clustering: Group channels by efficiency & viewership
-
-Web App: Simple, interactive Streamlit interface
-
-📌 Requirements
-
-See requirements.txt. Main libraries:
-
-pandas
-
-numpy
-
-matplotlib
-
-scikit-learn
-
-joblib
-
-streamlit
-
-🚀 Future Improvements
-
-Add model selection dropdown in the app
-
-Deploy online (Streamlit Cloud / Heroku / Render)
-
-Extend to other platforms (Twitch, Kick, etc.)
-
-
-
+📂 Project Structure
+```bash
+youtube-gaming-ml-analysis/
+│── app.py                # Main script & Streamlit app
+│── model.pkl             # Saved Random Forest model
+│── scaler.pkl            # Saved feature scaler
+│── youtube_channels.csv  # Dataset (rename for simplicity)
+│── requirements.txt      # Dependencies
+│── README.md             # Project documentation
+```
