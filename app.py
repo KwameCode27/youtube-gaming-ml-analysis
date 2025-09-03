@@ -54,7 +54,7 @@ elif menu == "Cluster Dashboard":
     st.header("📊 Channel Clustering")
 
     # Load dataset
-    df = pd.read_csv("C:\\Users\\fente\\Desktop\\youtube-gaming-ml-analysis\\data\\Top YouTube Gaming Channels - 03 Aug - 02 Sep, 2025.csv")
+    df = pd.read_csv("data/train.csv")
 
     # Feature engineering
     df["Viewers_per_Hour"] = df["Average Viewers"] * df["Airtime Hours"]
@@ -79,7 +79,7 @@ elif menu == "Cluster Dashboard":
 # ----------------------------
 else:
     st.header("📂 Dataset Preview")
-    df = pd.read_csv("C:\\Users\\fente\\Desktop\\youtube-gaming-ml-analysis\\data\\Top YouTube Gaming Channels - 03 Aug - 02 Sep, 2025.csv")
+    df = pd.read_csv("data/train.csv")
     st.write("Here are the first 10 rows of the dataset:")
     st.dataframe(df.head(10))
 
